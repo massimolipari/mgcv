@@ -1,5 +1,8 @@
 PKG_LIBS =  $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CFLAGS)
 PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS)
+
+PKG_LIBS += -lomp
+PKG_CPPFLAGS = -Xclang -fopenmp
 ## *Both* the above must be *uncommented* for release
 
 #PKG_CFLAGS = -g -O0 -Wall -pedantic $(SHLIB_OPENMP_CFLAGS)
